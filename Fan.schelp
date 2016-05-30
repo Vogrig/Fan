@@ -1,0 +1,34 @@
+class:: Fan
+summary:: Control rate Ugen access to the fans’ speed of a Mac book pro
+categories::  UGens>External Control
+
+
+Description::
+
+It return the speed values in Rpm.
+
+
+ClassMethods::
+
+method::kr
+
+argument::normalized
+0 : non normalized |
+1 : normalized
+
+Examples::
+
+code::
+
+// control rate
+{Fan.kr(0).poll}.play
+
+// modulate freq
+{ SinOsc.ar(Fan.kr(0)) }.play;
+
+// modulate freq and phase
+{ SinOsc.ar(Fan.kr(0),Fan.kr(1)) }.play;
+
+
+
+::
